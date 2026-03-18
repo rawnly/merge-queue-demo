@@ -1,5 +1,9 @@
 FROM node:24-alpine AS builder
 
+ARG TURBO_API
+ARG TURBO_TEAM
+ARG TURBO_TOKEN
+
 WORKDIR /app
 
 COPY . .
