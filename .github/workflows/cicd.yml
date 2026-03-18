@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: "npm"
+      - name: Turbo Cache
+        uses: rharkor/caching-for-turbo@2b4b5b14a8d16b8556a58993a8ac331d56d8906d
+      - run: npm run turbo-build
