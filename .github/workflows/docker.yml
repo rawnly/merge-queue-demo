@@ -10,10 +10,12 @@ jobs:
       - uses: actions/checkout@v6
       - name: Turbo Cache
         uses: rharkor/caching-for-turbo@2b4b5b14a8d16b8556a58993a8ac331d56d8906d
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v4
+      # - name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v4
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
+        with:
+          driver-opts: network=host
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
