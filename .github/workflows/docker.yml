@@ -20,4 +20,12 @@ jobs:
           provider: github
           max-age: 3d
           max-size: 500mb
-      - run: turbogha ping
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+      - name: Build and push
+        uses: docker/build-push-action@v7
+        with:
+          push: false
+          tags: rawnly/merge-queue-demo:latest
