@@ -14,4 +14,5 @@ jobs:
           cache: "npm"
       - name: Turbo Cache
         uses: rharkor/caching-for-turbo@2b4b5b14a8d16b8556a58993a8ac331d56d8906d
+      - run: npm install --frozen-lockfile
       - run: npm run turbo-build
