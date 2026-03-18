@@ -17,9 +17,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
-          network: host
           push: false
           tags: rawnly/merge-queue-demo:latest
+          network: host
+          allow: network.host
           build-args: |
             TURBO_API=${{ env.TURBO_API }}
             TURBO_TOKEN=${{ env.TURBO_TOKEN }}

@@ -1,15 +1,14 @@
 FROM node:24-alpine AS builder
 
-ARG TURBO_API
-ARG TURBO_TEAM
-ARG TURBO_TOKEN
-
 WORKDIR /app
 
 COPY . .
 
 RUN npm install --frozen-lockfile
 
+ARG TURBO_API
+ARG TURBO_TEAM
+ARG TURBO_TOKEN
 RUN npm run turbo-build
 
 FROM node:24-alpine AS runner 
