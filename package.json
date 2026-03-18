@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "turbo-build": "turbo run build"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,6 @@
   "dependencies": {
     "turbo": "^2.8.17",
     "typescript": "^5.9.3"
-  }
+  },
+  "packageManager": "npm@11.6.2"
 }
